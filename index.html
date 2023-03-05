@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="menu">
+    <!-- li{item-$}*5 -->
+    <li>item-1</li>
+    <li>item-2</li>
+    <li>item-3</li>
+    <li>item-4</li>
+    <li>item-5</li>
+  </ul>
+  <ul></ul>
+  <ul></ul>
+  <ul></ul>
+  <script>
+    let menu = window.document.getElementById('menu'); //따옴표로 받아서 문자, 변수도 문자임
+    console.dir(menu); //구조를 먼저 보는 것이 훨씬 중요하다.
+    console.log(menu.children);
+    console.log(menu.children[0]);
+    //검증 완료
+    
+    console.dir(menu.children[0].style);
+    // menu.children[0].style.color = "blue"; //할당
+    
+    for(let index = 0; index < menu.children.length; index++){ 
+      //메뉴는 부모라서 .length안됨, 칠드런필요
+      if(menu.children[index].textContent === "item-3"){
+      // if(index === 2){ //index가 2번이라면 참
+        //참
+        menu.children[index].style.color = "red";
+      } else {
+        //거짓
+        menu.children[index].style.color = "blue";
+      }
+    }
+
+
+    // let menu2 = document.getElementsByTagName("ul"); //태그이름으로 식별하겠다
+    // console.log(menu2);
+    // console.dir(menu2);
+    // //콘솔을 찍는이유는 리턴을 확인하는 방법, 함수를 추론할수있는 가장빠른방법
+  </script>
+</body>
+</html>
